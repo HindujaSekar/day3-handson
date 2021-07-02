@@ -1,10 +1,9 @@
-package com.training.springbootjpa.controllers;
+package com.training.springbootjpa.util;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import com.training.springbootjpa.exceptions.ErrorDto;
@@ -12,7 +11,6 @@ import com.training.springbootjpa.exceptions.NoSuchAccountException;
 import com.training.springbootjpa.exceptions.StateNotFoundException;
 
 @ControllerAdvice
-@RequestMapping(produces = "application/vnd.error+json")
 public class AccountExceptionHandler extends ResponseEntityExceptionHandler {
 	
 	@ExceptionHandler(NoSuchAccountException.class)
